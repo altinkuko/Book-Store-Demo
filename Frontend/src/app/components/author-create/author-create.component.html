@@ -1,0 +1,19 @@
+<h3>Update Author</h3>
+<div class="container">
+  <form [formGroup]="formGroup" (ngSubmit)="createAuthor()">
+    <div class="input-group mt-3 mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="name">Author Name</label>
+      </div>
+      <input type="text" class="form-control" id="name" name="name" formControlName="name">
+    </div>
+    <div class="input-group mt-3 mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Author Bio</span>
+      </div>
+      <textarea type="text" class="form-control" id="bio" name="bio"
+                formControlName="bio" aria-label="Author Bio"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Create</button>
+  </form>
+</div>
