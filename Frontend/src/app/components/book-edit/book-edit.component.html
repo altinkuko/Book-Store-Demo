@@ -1,0 +1,38 @@
+<h3>Update Book</h3>
+<div class="container">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="input-group mt-3 mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Title</span>
+      </div>
+      <input type="text" class="form-control" id="title" name="title" formControlName="title">
+    </div>
+    <div class="form-group input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Description</span>
+      </div>
+      <textarea type="text" class="form-control" aria-label="Description" id="description" name="description"
+                formControlName="description"></textarea>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="author">Authors</label>
+      </div>
+      <select class="custom-select" (change)="changeAuthor(book.authorEntity)" formControlName="authorEntity" id="author">
+        <option value="" disabled>Choose Author</option>
+        <option *ngFor="let author of authors" [ngValue]="author">{{author.name}}</option>
+      </select>
+    </div>
+    <div class="input-group mt-3 mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text mr-4" for="categories">Categories</label>
+      </div>
+      <div class="form-check form-check-inline" *ngFor="let category of categories">
+        <input id="categories" type="checkbox" [value]="category" (change)="getCategory($event,category)">{{category.name}}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+    <button type="button" class="btn btn-danger mr-4 ml-4" (click)="onDelete()"><i class="bi bi-journal-x"></i> Delete</button>
+  </form>
+</div>

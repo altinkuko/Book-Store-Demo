@@ -1,0 +1,13 @@
+<h3>Edit Category</h3>
+<div class="container">
+  <form [formGroup]="formGroup" (ngSubmit)="onUpdate()">
+    <div class="input-group mt-3 mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="categories">Category Name</label>
+      </div>
+      <input id="categories" type="text" class="form-control " id="name" name="name" formControlName="name">
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+    <button type="button" class="btn btn-danger mr-4 ml-4" (click)="onDelete()"><i class="bi bi-clipboard-minus"></i> Delete</button>
+  </form>
+</div>

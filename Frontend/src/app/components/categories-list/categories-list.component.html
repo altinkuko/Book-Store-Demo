@@ -1,0 +1,35 @@
+<h2 class="text-center">Book List</h2>
+<div class="container">
+  <button class="btn-info mt-3 mb-3" (click)="createCategory()"><i class="bi bi-journal-plus"></i> Create Category</button>
+</div>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Category Name</th>
+      <th>Edit</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let category of categories | paginate: { itemsPerPage: size, currentPage: currentPage,  totalItems: totalElements }">
+      <td>{{category.name}}</td>
+      <td>
+        <button class="btn btn-info" (click)="updateCategory(category.categoryId)"><i class="bi bi-pen">Edit</i></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="row col-md-12 mt-4">
+    <div class="col-md-auto">
+          <span *ngIf="categories" class="table-details">Showing {{(currentPage-1) * size +1}} to {{(currentPage-1) * size
+          + numberOfElements }} of {{totalElements}}</span>
+    </div>
+    <div class="col">
+      <pagination-controls class="float-right" (pageChange)="getPage($event)"></pagination-controls>
+    </div>
+  </div>
+
+
+</div>
