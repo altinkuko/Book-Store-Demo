@@ -10,6 +10,7 @@ import {AuthorCreateComponent} from './components/author-create/author-create.co
 import {CategoriesListComponent} from './components/categories-list/categories-list.component';
 import {CategoryEditComponent} from './components/category-edit/category-edit.component';
 import {CategoryCreateComponent} from './components/category-create/category-create.component';
+import {UploadImageComponent} from "./components/upload-image/upload-image.component";
 
 const routes: Routes = [
   { path: 'books', component: BookListComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'create-author', component: AuthorCreateComponent},
   {path: 'categories', component: CategoriesListComponent},
   {path: 'category-edit/:id', component: CategoryEditComponent},
-  {path: 'category-create', component: CategoryCreateComponent}
+  {path: 'category-create', component: CategoryCreateComponent},
+  {path: 'upload-image', component: UploadImageComponent}
 ];
 
 @NgModule({

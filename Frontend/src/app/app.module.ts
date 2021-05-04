@@ -16,6 +16,7 @@ import { AuthorCreateComponent } from './components/author-create/author-create.
 import { CategoriesListComponent } from './components/categories-list/categories-list.component';
 import { CategoryCreateComponent } from './components/category-create/category-create.component';
 import { CategoryEditComponent } from './components/category-edit/category-edit.component';
+import { UploadImageComponent } from './components/upload-image/upload-image.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CategoryEditComponent } from './components/category-edit/category-edit.
     AuthorCreateComponent,
     CategoriesListComponent,
     CategoryCreateComponent,
-    CategoryEditComponent
+    CategoryEditComponent,
+    UploadImageComponent
   ],
   imports: [
     BrowserModule,
