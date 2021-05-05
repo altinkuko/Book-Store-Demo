@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BookComponent } from './components/book/book.component';
 import { BookListComponent } from './components/book-list/book-list.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -17,6 +17,10 @@ import { CategoriesListComponent } from './components/categories-list/categories
 import { CategoryCreateComponent } from './components/category-create/category-create.component';
 import { CategoryEditComponent } from './components/category-edit/category-edit.component';
 import { UploadImageComponent } from './components/upload-image/upload-image.component';
+import { ButtonComponent } from './models/button/button.component';
+import {LoginComponent} from "./components/login/login.component";
+import {LogoutComponent} from "./components/logout/logout.component";
+import {HttpInterceptorService} from "./service/http-interceptor.service";
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { UploadImageComponent } from './components/upload-image/upload-image.com
     CategoriesListComponent,
     CategoryCreateComponent,
     CategoryEditComponent,
-    UploadImageComponent
+    UploadImageComponent,
+    ButtonComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,8 @@ import { UploadImageComponent } from './components/upload-image/upload-image.com
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi:true}],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

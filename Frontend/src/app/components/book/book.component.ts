@@ -89,7 +89,8 @@ export class BookComponent implements OnInit {
 
   selectFile(event: any) {
     this.selectedFiles = event.target.files;
-    this.formGroup.value.imgUrl = 'http://localhost:8080/admin/files/' + `${this.selectedFiles.item(0).name}`;
+    //this.formGroup.value.imgUrl = 'http://localhost:8080/admin/files/' + `${this.selectedFiles.item(0).name}`;
+    this.formGroup.patchValue({"imgUrl": 'http://localhost:8080/admin/files/' + `${this.selectedFiles.item(0).name}`})
     console.log(this.formGroup.value);
   }
 }

@@ -1,6 +1,6 @@
 <h2 class="text-center">Book List</h2>
 <div class="container">
-  <button class="btn-info mt-3 mb-3" (click)="createBook()"><i class="bi bi-journal-plus"></i> Create Book</button>
+  <button class="buttonClick mb-5" (click)="createBook()"><i class="bi bi-journal-plus"></i> Create Book</button>
 </div>
 <div class="container">
 <table class="table table-striped">
@@ -21,7 +21,7 @@
     <td><img src="{{book?.imgUrl}}" style="width:50px;height:auto;"></td>
     <td>{{book.authorEntity?.name}}</td>
     <td>
-      <button class="btn btn-info" (click)="updateBook(book.bookId)"><i class="bi bi-pen">Edit</i></button>
+      <button class="buttonOnHover" (click)="updateBook(book.bookId)"><i class="bi bi-pen">Edit</i></button>
     </td>
   </tr>
   </tbody>

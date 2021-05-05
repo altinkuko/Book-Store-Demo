@@ -1,6 +1,6 @@
 <h2 class="text-center">Book List</h2>
 <div class="container">
-  <button class="btn-info mt-3 mb-3" (click)="createCategory()"><i class="bi bi-journal-plus"></i> Create Category</button>
+  <button class="buttonClick mb-5" (click)="createCategory()"><i class="bi bi-journal-plus"></i> Create Category</button>
 </div>
 <div class="container">
   <table class="table table-striped">
@@ -15,7 +15,7 @@
     <tr *ngFor="let category of categories | paginate: { itemsPerPage: size, currentPage: currentPage,  totalItems: totalElements }">
       <td>{{category.name}}</td>
       <td>
-        <button class="btn btn-info" (click)="updateCategory(category.categoryId)"><i class="bi bi-pen">Edit</i></button>
+        <button class="buttonOnHover" (click)="updateCategory(category.categoryId)"><i class="bi bi-pen">Edit</i></button>
       </td>
     </tr>
     </tbody>
