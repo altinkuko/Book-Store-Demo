@@ -15,14 +15,14 @@
                 formControlName="description" aria-label="Description"></textarea>
     </div>
     <div class="form-group">
-      <input type="file" (change)="onImageSelected($event)" formControlName="imgUrl">
+      <input type="file" accept="image/*" (change)="selectFile($event)">
     </div>
     <div>
       <div class="input-group mt-3 mb-3">
         <div class="input-group-prepend">
           <label class="input-group-text" for="author">Authors</label>
         </div>
-        <select class="custom-select" (change)="changeAuthor(book.authorEntity)" formControlName="authorEntity"
+        <select class="custom-select"  formControlName="authorEntity"
                 id="author">
           <option value="" disabled>Choose Author</option>
           <option *ngFor="let author of authors" [ngValue]="author">{{author.name}}</option>

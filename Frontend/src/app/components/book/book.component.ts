@@ -1,13 +1,14 @@
-import {Component, OnInit, Optional} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BookService} from '../../service/book.service';
-import {FormArray, FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {Book} from '../../models/book';
 import {Author} from '../../models/author';
 import {AuthorService} from '../../service/author.service';
 import {Category} from '../../models/category';
 import {CategoriesService} from '../../service/categories.service';
-import {HttpClient} from '@angular/common/http';
+import {Observable} from "rxjs";
+import {FileService} from "../../service/file.service";
 
 @Component({
   selector: 'app-book',
@@ -21,14 +22,18 @@ export class BookComponent implements OnInit {
   authors: Author[];
   categories: Category[];
   selectedCategories: Category[] = new Array<Category>();
-  selectedFile: File = null;
+  selectedFiles?: FileList;
+  message = '';
+
+  fileInfos?: Observable<any>;
+
 
   constructor(private bookService: BookService,
               private formBuilder: FormBuilder,
               private router: Router,
               private authorService: AuthorService,
               private categoriesService: CategoriesService,
-              private http: HttpClient) {
+              private fileService: FileService) {
   }
 
   ngOnInit(): void {
@@ -79,10 +84,13 @@ export class BookComponent implements OnInit {
       this.selectedCategories = this.selectedCategories.filter(m => m !== category);
     }
     this.formGroup.value.categories = this.selectedCategories;
+    console.log(this.formGroup.value)
   }
 
-  onImageSelected(event) {
-    this.selectedFile = <File> event.target.files[0];
+  selectFile(event: any) {
+    this.selectedFiles = event.target.files;
+    //this.formGroup.value.imgUrl = 'http://localhost:8080/admin/files/' + `${this.selectedFiles.item(0).name}`;
+    this.formGroup.patchValue({"imgUrl": 'http://localhost:8080/admin/files/' + `${this.selectedFiles.item(0).name}`})
     console.log(this.formGroup.value);
   }
 }

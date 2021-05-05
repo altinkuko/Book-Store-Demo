@@ -3,7 +3,6 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {Author} from '../models/author';
-import {Book} from '../models/book';
 
 const getAllUrl = 'http://localhost:8080/admin/authors';
 const editUrl = 'http://localhost:8080/admin/author';

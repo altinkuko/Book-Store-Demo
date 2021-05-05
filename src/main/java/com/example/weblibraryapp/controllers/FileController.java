@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/admin")
 public class FileController {
 

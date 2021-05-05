@@ -21,6 +21,8 @@ export class BookEditComponent implements OnInit {
   authors: Author[];
   categories: Category[];
   selectedCategories: Category[] = new Array<Category>();
+  selectedFiles?: FileList;
+
 
   constructor(private bookService: BookService,
               private formBuilder: FormBuilder,
@@ -34,7 +36,8 @@ export class BookEditComponent implements OnInit {
         title: this.book.title,
         description: this.book.description,
         authorEntity: this.book.authorEntity,
-        categories: this.book.categories
+        categories: this.book.categories,
+        imgUrl: this.book.imgUrl
       }
     );
   }
@@ -88,6 +91,11 @@ export class BookEditComponent implements OnInit {
       this.selectedCategories = this.selectedCategories.filter(m => m !== category);
     }
     this.formGroup.value.categories = this.selectedCategories;
+    console.log(this.formGroup.value);
+  }
+  selectFile(event: any) {
+    this.selectedFiles = event.target.files;
+    this.formGroup.value.imgUrl = 'http://localhost:8080/admin/files/' + `${this.selectedFiles.item(0).name}`;
     console.log(this.formGroup.value);
   }
 }

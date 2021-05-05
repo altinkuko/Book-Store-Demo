@@ -1,7 +1,7 @@
 <h2 class="text-center">Authors List</h2>
 
 <div class="container">
-  <button class="btn-info mt-3 mb-3" (click)="create()"><i class="bi bi-person-plus"></i> Create Author</button>
+  <button class="buttonClick mb-5" (click)="create()"><i class="bi bi-person-plus"></i> Create Author</button>
   <table class="table tab-content">
     <thead>
     <tr>
@@ -16,7 +16,7 @@
       <td>{{author.name}}</td>
       <td>{{author.bio}}</td>
       <td>
-        <button class="btn btn-info" (click)="update(author.authorId)"><i class="bi bi-pen">Edit</i></button>
+        <button class="buttonOnHover" (click)="update(author.authorId)"><i class="bi bi-pen">Edit</i></button>
       </td>
     </tr>
     </tbody>

@@ -34,7 +34,8 @@ public class BookEntity {
 
     @JsonIgnore
     @ManyToMany
-    @JoinTable(name = "book_categories", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
+    @JoinTable(name = "book_categories", joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<CategoryEntity> categories;
 
 }
