@@ -38,7 +38,6 @@ export class UploadImageComponent implements OnInit {
             if (event.type === HttpEventType.UploadProgress) {
             } else if (event instanceof HttpResponse) {
               this.message = event.body.message;
-              this.fileInfos = this.fileService.getFiles();
             }
           },
           (err: any) => {

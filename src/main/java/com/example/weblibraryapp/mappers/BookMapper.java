@@ -8,10 +8,10 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring", uses = {CategoryMapper.class})
 public interface BookMapper extends EntityMapper<BookEntity, BookDTO>{
 
-    @Mapping(source = "categories", target = "categories", ignore = true)
+    @Mapping(source = "categories", target = "categories")
     BookDTO toDTO(BookEntity bookEntity);
 
-    @Mapping(source = "categories", target = "categories", ignore = true)
+    @Mapping(source = "categories", target = "categories")
     BookEntity toEntity(BookDTO bookDTO);
 
 }

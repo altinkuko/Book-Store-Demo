@@ -22,7 +22,7 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="author">Authors</label>
         </div>
-        <select class="custom-select"  formControlName="authorEntity"
+        <select class="custom-select" formControlName="authorEntity"
                 id="author">
           <option value="" disabled>Choose Author</option>
           <option *ngFor="let author of authors" [ngValue]="author">{{author.name}}</option>

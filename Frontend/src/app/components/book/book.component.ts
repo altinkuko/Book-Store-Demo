@@ -83,13 +83,12 @@ export class BookComponent implements OnInit {
     } else {
       this.selectedCategories = this.selectedCategories.filter(m => m !== category);
     }
-    this.formGroup.value.categories = this.selectedCategories;
+    this.formGroup.patchValue({"categories": this.selectedCategories});
     console.log(this.formGroup.value)
   }
 
   selectFile(event: any) {
     this.selectedFiles = event.target.files;
-    //this.formGroup.value.imgUrl = 'http://localhost:8080/admin/files/' + `${this.selectedFiles.item(0).name}`;
     this.formGroup.patchValue({"imgUrl": 'http://localhost:8080/admin/files/' + `${this.selectedFiles.item(0).name}`})
     console.log(this.formGroup.value);
   }

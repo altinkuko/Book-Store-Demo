@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       },
       error => {
         this.invalidLogin = true
-        this.error = error.message;
+        this.error = 'Invalid username or password';
         console.log(error);
       }
     )

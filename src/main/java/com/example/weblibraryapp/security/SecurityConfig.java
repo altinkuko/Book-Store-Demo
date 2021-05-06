@@ -48,13 +48,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-        http.csrf().disable().authorizeRequests().
-                antMatchers("/login","/","/admin/books", "/admin/files/**").permitAll()
-                .antMatchers("http://localhost:4200/**").authenticated()
+        http.csrf().disable().authorizeRequests().antMatchers("/login", "/", "/admin/files/{filename:.+}").permitAll()
+                                .anyRequest().authenticated()
                 .and().exceptionHandling().and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-        http.authorizeRequests().antMatchers("/resources/**").permitAll().anyRequest().permitAll();
         http.cors();
     }
 }

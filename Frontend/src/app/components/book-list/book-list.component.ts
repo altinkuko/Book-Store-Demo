@@ -48,14 +48,14 @@ export class BookListComponent implements OnInit {
   getPage(page: number) {
     this.loading = true;
     this.currentPage = page;
-    //this.getAllBooks();
+    this.getAllBooks();
   }
 
   sort(key: string) {
     this.loading = true;
     this.sortKey = key + ','.concat(this.reverse ? 'DESC' : 'ASC');
     this.reverse = !this.reverse;
-    //this.getAllBooks();
+    this.getAllBooks();
   }
   updateBook(id: number) {
     this.router.navigate(['/book-edit', id]);

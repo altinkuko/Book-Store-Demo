@@ -28,12 +28,11 @@ public class BookEntity {
 
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "authorId")
     private AuthorEntity authorEntity;
 
-    @JsonIgnore
     @ManyToMany
+    @JsonIgnore
     @JoinTable(name = "book_categories", joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
     private List<CategoryEntity> categories;
