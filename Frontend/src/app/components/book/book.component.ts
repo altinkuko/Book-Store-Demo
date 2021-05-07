@@ -57,7 +57,7 @@ export class BookComponent implements OnInit {
   }
 
   getAuthors() {
-    this.authorService.getAuthors(0, 5, name)
+    this.authorService.getAuthors(null, null, name)
       .subscribe(
         data => {
           this.authors = data.content;
@@ -66,7 +66,7 @@ export class BookComponent implements OnInit {
   }
 
   getAllCategories() {
-    this.categoriesService.getCategories(0, 5, name)
+    this.categoriesService.getCategories(null, null, name)
       .subscribe(
         data => {
           this.categories = data.content;

@@ -48,7 +48,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 
-        http.csrf().disable().authorizeRequests().antMatchers("/login", "/", "/admin/files/{filename:.+}").permitAll()
+        http.
+    authorizeRequests()
+                .antMatchers("/login", "/", "/admin/files/{filename:.+}").permitAll()
                                 .anyRequest().authenticated()
                 .and().exceptionHandling().and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

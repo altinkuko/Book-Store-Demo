@@ -68,7 +68,7 @@ export class BookEditComponent implements OnInit {
   }
 
   getAllCategories() {
-    this.categoriesService.getCategories(0, 5, name)
+    this.categoriesService.getCategories(0, 9, name)
       .subscribe(
         data => {
           this.categories = data.content;
