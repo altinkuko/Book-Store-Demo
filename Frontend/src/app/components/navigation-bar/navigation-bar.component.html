@@ -1,9 +1,9 @@
-<div class="topnav" *ngIf="authenticationService.isUserLoggedIn()">
-  <a routerLinkActive="active" routerLink="/books" class="nav-link">Book List</a>
-  <a routerLinkActive="active" routerLink="/authors" class="nav-link">Author List</a>
-  <a routerLinkActive="active" routerLink="/categories" class="nav-link">Categories</a>
-  <a routerLinkActive="active" routerLink="/upload-image" class="nav-link">Upload Image</a>
+<div class="topnav">
+  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/books" class="nav-link">Book List</a>
+  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/authors" class="nav-link">Author List</a>
+  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/categories" class="nav-link">Categories</a>
+  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/upload-image" class="nav-link">Upload Image</a>
   <div class="topnav-right">
-    <a routerLinkActive="active" routerLink="/logout" class="btn-outline-info ml-auto">Log Out</a>
+    <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/logout" class="btn-outline-info ml-auto">Log Out</a>
   </div>
 </div>

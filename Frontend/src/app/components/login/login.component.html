@@ -12,6 +12,7 @@
       <input type="password" id="password" [(ngModel)]="password" class="fadeIn third" name="login" placeholder="password">
       <input type="submit" (click)="checkLogin()" class="fadeIn fourth" value="Log In">
     </form>
+    <div *ngIf="error" class="alert alert-danger" role="alert">{{ error }}</div>
 
   </div>
 </div>
