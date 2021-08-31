@@ -1,9 +1,11 @@
 <div class="topnav">
-  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/books" class="nav-link">Book List</a>
-  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/authors" class="nav-link">Author List</a>
-  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/categories" class="nav-link">Categories</a>
-  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/upload-image" class="nav-link">Upload Image</a>
+  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/books" class="nav-link bi-book"> Book List</a>
+  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/authors" class="nav-link bi-person"> Author List</a>
+  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/categories" class="nav-link bi-card-text"> Categories</a>
+  <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/upload-image" class="nav-link bi-image"> Upload Image</a>
+
   <div class="topnav-right">
-    <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/logout" class="btn-outline-info ml-auto">Log Out</a>
+    <a href="//localhost:8080" class="nav-link"><i class="bi-house-fill"></i> Home</a>
+    <a *ngIf="authenticationService.isUserLoggedIn()" routerLinkActive="active" routerLink="/logout" class="btn-outline-info ml-auto"><i class="bi-key"></i> Log Out</a>
   </div>
 </div>
